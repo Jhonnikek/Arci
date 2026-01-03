@@ -1,6 +1,8 @@
 from PySide6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel
 from ui.components.power_profile import WidgetPowerProfile
 from ui.components.gpu_mode import WidgetGpuMode
+from ui.components.keyboard import WidgetKeyboard
+from ui.components.bettery import WidgetBattery
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -23,12 +25,16 @@ class MainWindow(QMainWindow):
         self.gpu_mode = WidgetGpuMode()
         main_layout.addWidget(self.gpu_mode)
 
+        self.aura_label = QLabel("Keyboard")
+        self.keyboard = WidgetKeyboard()
+        main_layout.addWidget(self.aura_label)
+        main_layout.addWidget(self.keyboard)
+
+        self.battery_label = QLabel("Battery Charge Limit")
+        self.battery = WidgetBattery()
+        main_layout.addWidget(self.battery_label)
+        main_layout.addWidget(self.battery)
+
         main_layout.addStretch()
         self.setLayout(main_layout)
         central_widget.setLayout(main_layout)
-
-    """def power_profile(self):
-        btn = self.sender()
-        level = btn.text()
-        change_profile(level)
-        self.power_profile_label.setText(f"Mode: {level}")"""
