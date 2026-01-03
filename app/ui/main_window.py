@@ -26,3 +26,9 @@ class MainWindow(QMainWindow):
         main_layout.addStretch()
         self.setLayout(main_layout)
         central_widget.setLayout(main_layout)
+
+    """def power_profile(self):
+        btn = self.sender()
+        level = btn.text()
+        change_profile(level)
+        self.power_profile_label.setText(f"Mode: {level}")"""
