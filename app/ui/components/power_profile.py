@@ -11,9 +11,9 @@ class WidgetPowerProfile(QWidget):
         self.power_profile_label = QLabel("Mode ")
         layout.addWidget(self.power_profile_label)
 
-        self.low_power_btn = QPushButton("Low Power")
-        self.low_power_btn.clicked.connect(self.set_power_profile)
-        power_profile_layout.addWidget(self.low_power_btn)
+        self.quite_btn = QPushButton("Quiet")
+        self.quite_btn.clicked.connect(self.set_power_profile)
+        power_profile_layout.addWidget(self.quite_btn)
 
         self.balanced_btn = QPushButton("Balanced")
         self.balanced_btn.clicked.connect(self.set_power_profile)
