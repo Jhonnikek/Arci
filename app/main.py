@@ -19,11 +19,14 @@ if __name__ == "__main__":
     tray = SystemTray(app_icon)
     tray.show()
 
-    def show_window():
-        window.show()
-        window.raise_()      
-        window.activateWindow()
+    def toggle_window():
+        if window.isVisible():
+            window.hide()
+        else:
+            window.show()
+            window.activateWindow()
 
-    tray.show_signal.connect(show_window)
+    tray.show_signal.connect(toggle_window)
+
     window.show()
     sys.exit(app.exec())
