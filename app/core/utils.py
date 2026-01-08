@@ -18,3 +18,10 @@ def get_battery_limit():
             with open(path, "r") as f:
                 return f.read().strip()
     return "unknown"
+
+
+def get_keyboard_brightness():
+    if os.path.exists("/sys/class/leds/asus::kbd_backlight/brightness"):
+        with open("/sys/class/leds/asus::kbd_backlight/brightness", "r") as f:
+            return f.read().strip()
+    return "0"
