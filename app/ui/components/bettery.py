@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QSlider, QLabel
 from PySide6.QtCore import Qt
 from core.commands import change_battery_limit
+from core.utils import get_battery_limit
 
 class WidgetBattery(QWidget):
     def __init__(self):
@@ -19,6 +20,9 @@ class WidgetBattery(QWidget):
         self.battery_slider.sliderReleased.connect(self.set_battery_charge_limit)
 
         self.setLayout(layout)
+        limit = get_battery_limit()
+        self.battery_slider.setValue(int(limit))
+        self.update_label(limit)
 
     def update_label(self, limit):
         self.battery_label.setText(f"Battery Charge Limit: {limit}%")
