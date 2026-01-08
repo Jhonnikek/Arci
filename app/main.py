@@ -11,6 +11,8 @@ path_icon = os.path.join(dir, "assets", "logo.svg")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setOrganizationName("Arci")
+    app.setApplicationName("Arci")
     app_icon = QIcon(path_icon)
     app.setWindowIcon(app_icon)
 
