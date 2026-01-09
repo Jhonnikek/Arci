@@ -8,7 +8,6 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("Arci")
-        self.setFixedSize(300, 275)
 
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
@@ -22,7 +21,6 @@ class MainWindow(QMainWindow):
 
         self.battery = WidgetBattery()
         main_layout.addWidget(self.battery)
-
-        main_layout.addStretch()
+        self.adjustSize()
         self.setLayout(main_layout)
         central_widget.setLayout(main_layout)

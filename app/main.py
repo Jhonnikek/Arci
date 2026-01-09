@@ -30,5 +30,4 @@ if __name__ == "__main__":
 
     tray.show_signal.connect(toggle_window)
 
-    window.show()
     sys.exit(app.exec())

@@ -76,7 +76,6 @@ class WidgetKeyboard(QWidget):
         color_name = color_name.lstrip("#")
         self.color = color_name
         change_color(mode.lower(), color_name)
-        self.set_rgb_level()
 
     def set_aura_mode(self):
         mode = self.aura_mode_combobox.currentText()
